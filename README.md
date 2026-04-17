@@ -79,17 +79,31 @@ This project was built to simulate a **real-world scalable backend system** and 
 ---
 
 ## 🔧 Core Services
+🧩 Service Responsibilities
 
-| Service                        Responsibility                                  
-| ----------------------------------------------------------------
-| API Gateway          | Entry point, routing, JWT validation             
-| User Service         | Authentication, user management, JWT generation 
-| Product Service      | Product catalog management                      
-| Order Service        | Order creation & Saga orchestration             
-| Inventory Service    | Stock reservation & rollback                    
-| Payment Service      | Payment processing                              
-| Notification Service | Email/SMS notifications                         
-| Eureka Server        | Service discovery                               
+- 🚪 **API Gateway**  
+  Acts as the entry point for all client requests, handles routing, and performs JWT validation  
+
+- 👤 **User Service**  
+  Manages user authentication, user data, and JWT generation  
+
+- 🛍️ **Product Service**  
+  Handles product catalog and related data management  
+
+- 📦 **Order Service**  
+  Responsible for order creation and Saga orchestration across services  
+
+- 📊 **Inventory Service**  
+  Manages stock reservation and rollback mechanisms  
+
+- 💳 **Payment Service**  
+  Processes payments and manages transaction status  
+
+- 🔔 **Notification Service**  
+  Sends email and SMS notifications for order-related events  
+
+- 🌐 **Eureka Server**  
+  Provides service discovery and registry for all microservices                        
 
 ---
 
