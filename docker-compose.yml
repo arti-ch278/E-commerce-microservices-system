@@ -1,0 +1,209 @@
+version: "3.8"
+
+services:
+
+# =====================
+# INFRA
+# =====================
+
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+    mem_limit: 400m
+    restart: always
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - eureka-server
+    mem_limit: 400m
+    restart: always
+
+# =====================
+# MYSQL
+# =====================
+
+  mysql:
+    image: mysql:8.4
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    mem_limit: 500m
+    restart: always
+
+# =====================
+# KAFKA
+# =====================
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    mem_limit: 256m
+    restart: always
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_HEAP_OPTS: "-Xms128M -Xmx256M"
+    mem_limit: 400m
+    restart: always
+
+# =====================
+# ZIPKIN
+# =====================
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    mem_limit: 300m
+    restart: always
+
+
+
+# =====================
+# MICROSERVICES
+# =====================
+
+  user-service:
+    build: ./user-service
+    ports:
+      - "8086:8086"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Xms128m -Xmx256m"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    mem_limit: 400m
+    restart: always
+
+  product-service:
+    build: ./product-service
+    ports:
+      - "8085:8085"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Xms128m -Xmx256m"
+    volumes:
+      - product_images:/app/uploads/products
+    depends_on:
+      mysql:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    mem_limit: 400m
+    restart: always
+
+  order-service:
+    build: ./order-service
+    ports:
+      - "8083:8083"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Xms128m -Xmx256m"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    mem_limit: 400m
+    restart: always
+
+  inventory-service:
+    build: ./inventory-service
+    ports:
+      - "8081:8081"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Xms128m -Xmx256m"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    mem_limit: 400m
+    restart: always
+
+  payment-service:
+    build: ./payment-service
+    ports:
+      - "8084:8084"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Xms128m -Xmx256m"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    mem_limit: 400m
+    restart: always
+
+  notification-service:
+    build: ./notification-service
+    ports:
+      - "8087:8087"
+    env_file:
+      - .env
+    environment:
+      JAVA_OPTS: "-Xms128m -Xmx256m"
+    depends_on:
+      kafka:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+    mem_limit: 300m
+    restart: always
+
+# =====================
+# VOLUMES
+# =====================
+
+volumes:
+  mysql_data:
+  product_images:
