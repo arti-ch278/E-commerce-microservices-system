@@ -1,0 +1,1679 @@
+{
+  "info": {
+    "_postman_id": "a4018487-46ee-479e-9bd0-62d542e49dda",
+    "name": "Product Service API",
+    "description": "Product And Category management APIs for E-commerce Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53134011",
+    "_collection_link": "https://go.postman.co/collection/53134011-a4018487-46ee-479e-9bd0-62d542e49dda?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "products",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "upload-image",
+                  "item": [
+                    {
+                      "name": "Upload product image",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "description": "Product image file",
+                              "key": "file",
+                              "type": "file",
+                              "src": "/C:/Users/Admin/Desktop/RESPONSE/iphone.jpeg"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/1/upload-image",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            "1",
+                            "upload-image"
+                          ]
+                        },
+                        "description": "Upload an image file for a product. JWT required."
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "formdata",
+                              "formdata": [
+                                {
+                                  "description": "Product image file",
+                                  "key": "file",
+                                  "type": "file",
+                                  "src": []
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/products/:id/upload-image",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "products",
+                                ":id",
+                                "upload-image"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "2937"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": 3871,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 514.2173418044682,\n  \"discountPrice\": 6293.937714748517,\n  \"quantity\": 5779,\n  \"brand\": \"string\",\n  \"imageUrl\": \"string\",\n  \"skuCode\": \"string\",\n  \"categoryId\": 6624\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get a product by ID",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products/4",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "4"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2937"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 3871,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 514.2173418044682,\n  \"discountPrice\": 6293.937714748517,\n  \"quantity\": 5779,\n  \"brand\": \"string\",\n  \"imageUrl\": \"string\",\n  \"skuCode\": \"string\",\n  \"categoryId\": 6624\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Update a product by ID",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"categoryId\": 1,\n  \"description\": \"Latest iPhone model with 128GB storage and other features\",\n  \"name\": \"iPhone 14\",\n  \"price\": 999.99,\n  \"quantity\": 50,\n  \"skuCode\": \"IP14-128GB-BLK\",\n  \"discountPrice\": 849.99,\n  \"brand\": \"Apple\",\n  \"imageUrl\": \"https://example.com/images/iphone14.jpg\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products/1",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "1"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"categoryId\": 1,\n  \"description\": \"Latest iPhone model with 128GB storage\",\n  \"name\": \"iPhone 14\",\n  \"price\": 799.99,\n  \"quantity\": 50,\n  \"skuCode\": \"IP14-128GB-BLK\",\n  \"discountPrice\": 749.99,\n  \"brand\": \"Apple\",\n  \"imageUrl\": \"https://example.com/images/iphone14.jpg\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2937"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 3871,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 514.2173418044682,\n  \"discountPrice\": 6293.937714748517,\n  \"quantity\": 5779,\n  \"brand\": \"string\",\n  \"imageUrl\": \"string\",\n  \"skuCode\": \"string\",\n  \"categoryId\": 6624\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delete a product by ID",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products/5",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "5"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2937"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "search",
+              "item": [
+                {
+                  "name": "Search products by keyword",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products/search?keyword=phone&page=0&size=10",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "search"
+                      ],
+                      "query": [
+                        {
+                          "key": "keyword",
+                          "value": "phone"
+                        },
+                        {
+                          "key": "page",
+                          "value": "0",
+                          "description": "Page number (default 0)"
+                        },
+                        {
+                          "key": "size",
+                          "value": "10",
+                          "description": "Number of items per page (default 10)"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/search?keyword=string&page=0&size=10",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "key": "keyword",
+                              "value": "string"
+                            },
+                            {
+                              "description": "Page number (default 0)",
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Number of items per page (default 10)",
+                              "key": "size",
+                              "value": "10"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"totalElements\": 9633,\n  \"totalPages\": 3522,\n  \"pageable\": {\n    \"paged\": false,\n    \"pageNumber\": 4039,\n    \"pageSize\": 4541,\n    \"offset\": 7099,\n    \"sort\": {\n      \"sorted\": true,\n      \"empty\": true,\n      \"unsorted\": false\n    },\n    \"unpaged\": true\n  },\n  \"size\": 4709,\n  \"content\": [\n    {\n      \"id\": 1843,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 125.09859417084269,\n      \"discountPrice\": 270.298749916158,\n      \"quantity\": 1051,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 2238\n    },\n    {\n      \"id\": 8413,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 4305.273428806193,\n      \"discountPrice\": 2161.3184351396053,\n      \"quantity\": 7395,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 3098\n    }\n  ],\n  \"number\": 1532,\n  \"sort\": {\n    \"sorted\": true,\n    \"empty\": true,\n    \"unsorted\": false\n  },\n  \"numberOfElements\": 5445,\n  \"first\": false,\n  \"last\": true,\n  \"empty\": true\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "images",
+              "item": [
+                {
+                  "name": "{fileName}",
+                  "item": [
+                    {
+                      "name": "Get product image by file name",
+                      "request": {
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": [
+                            {
+                              "key": "token",
+                              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/images/bf580e79-df87-43d8-8fac-c97c7e6065de.jpeg",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            "images",
+                            "bf580e79-df87-43d8-8fac-c97c7e6065de.jpeg"
+                          ]
+                        },
+                        "description": "Retrieve product image by file name. Returns appropriate image type."
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/products/images/:fileName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "products",
+                                "images",
+                                ":fileName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "fileName",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "string"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "filter",
+              "item": [
+                {
+                  "name": "Filter products by category and price",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products/filter?categoryId=1&minPrice=500&maxPrice=1500&page=0&size=10&sortBy=id&sortDir=asc",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "filter"
+                      ],
+                      "query": [
+                        {
+                          "key": "categoryId",
+                          "value": "1"
+                        },
+                        {
+                          "key": "minPrice",
+                          "value": "500"
+                        },
+                        {
+                          "key": "maxPrice",
+                          "value": "1500"
+                        },
+                        {
+                          "key": "page",
+                          "value": "0"
+                        },
+                        {
+                          "key": "size",
+                          "value": "10"
+                        },
+                        {
+                          "key": "sortBy",
+                          "value": "id"
+                        },
+                        {
+                          "key": "sortDir",
+                          "value": "asc"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/filter?categoryId=2937&minPrice=3586.4837037343955&maxPrice=3586.4837037343955&page=0&size=10&sortBy=id&sortDir=asc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            "filter"
+                          ],
+                          "query": [
+                            {
+                              "key": "categoryId",
+                              "value": "2937"
+                            },
+                            {
+                              "key": "minPrice",
+                              "value": "3586.4837037343955"
+                            },
+                            {
+                              "key": "maxPrice",
+                              "value": "3586.4837037343955"
+                            },
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "10"
+                            },
+                            {
+                              "key": "sortBy",
+                              "value": "id"
+                            },
+                            {
+                              "key": "sortDir",
+                              "value": "asc"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"totalElements\": 9633,\n  \"totalPages\": 3522,\n  \"pageable\": {\n    \"paged\": false,\n    \"pageNumber\": 4039,\n    \"pageSize\": 4541,\n    \"offset\": 7099,\n    \"sort\": {\n      \"sorted\": true,\n      \"empty\": true,\n      \"unsorted\": false\n    },\n    \"unpaged\": true\n  },\n  \"size\": 4709,\n  \"content\": [\n    {\n      \"id\": 1843,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 125.09859417084269,\n      \"discountPrice\": 270.298749916158,\n      \"quantity\": 1051,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 2238\n    },\n    {\n      \"id\": 8413,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 4305.273428806193,\n      \"discountPrice\": 2161.3184351396053,\n      \"quantity\": 7395,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 3098\n    }\n  ],\n  \"number\": 1532,\n  \"sort\": {\n    \"sorted\": true,\n    \"empty\": true,\n    \"unsorted\": false\n  },\n  \"numberOfElements\": 5445,\n  \"first\": false,\n  \"last\": true,\n  \"empty\": true\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "advance",
+              "item": [
+                {
+                  "name": "Advanced product search",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products/advance?keyword=phone&categoryId=1&minPrice=500&maxPrice=1500&page=0&size=10&sortBy=id&sortDir=asc",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "advance"
+                      ],
+                      "query": [
+                        {
+                          "key": "keyword",
+                          "value": "phone"
+                        },
+                        {
+                          "key": "categoryId",
+                          "value": "1"
+                        },
+                        {
+                          "key": "minPrice",
+                          "value": "500"
+                        },
+                        {
+                          "key": "maxPrice",
+                          "value": "1500"
+                        },
+                        {
+                          "key": "page",
+                          "value": "0"
+                        },
+                        {
+                          "key": "size",
+                          "value": "10"
+                        },
+                        {
+                          "key": "sortBy",
+                          "value": "id"
+                        },
+                        {
+                          "key": "sortDir",
+                          "value": "asc"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/products/advance?keyword=string&categoryId=2937&minPrice=3586.4837037343955&maxPrice=3586.4837037343955&page=0&size=10&sortBy=id&sortDir=asc",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            "advance"
+                          ],
+                          "query": [
+                            {
+                              "key": "keyword",
+                              "value": "string"
+                            },
+                            {
+                              "key": "categoryId",
+                              "value": "2937"
+                            },
+                            {
+                              "key": "minPrice",
+                              "value": "3586.4837037343955"
+                            },
+                            {
+                              "key": "maxPrice",
+                              "value": "3586.4837037343955"
+                            },
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "10"
+                            },
+                            {
+                              "key": "sortBy",
+                              "value": "id"
+                            },
+                            {
+                              "key": "sortDir",
+                              "value": "asc"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"totalElements\": 9633,\n  \"totalPages\": 3522,\n  \"pageable\": {\n    \"paged\": false,\n    \"pageNumber\": 4039,\n    \"pageSize\": 4541,\n    \"offset\": 7099,\n    \"sort\": {\n      \"sorted\": true,\n      \"empty\": true,\n      \"unsorted\": false\n    },\n    \"unpaged\": true\n  },\n  \"size\": 4709,\n  \"content\": [\n    {\n      \"id\": 1843,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 125.09859417084269,\n      \"discountPrice\": 270.298749916158,\n      \"quantity\": 1051,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 2238\n    },\n    {\n      \"id\": 8413,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 4305.273428806193,\n      \"discountPrice\": 2161.3184351396053,\n      \"quantity\": 7395,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 3098\n    }\n  ],\n  \"number\": 1532,\n  \"sort\": {\n    \"sorted\": true,\n    \"empty\": true,\n    \"unsorted\": false\n  },\n  \"numberOfElements\": 5445,\n  \"first\": false,\n  \"last\": true,\n  \"empty\": true\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Get all products with pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/products?page=0&size=10&sortBy=id&sortDir=asc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0",
+                      "description": "Page number (default 0)"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10",
+                      "description": "Number of items per page (default 10)"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "id",
+                      "description": "Field to sort by (default 'id')"
+                    },
+                    {
+                      "key": "sortDir",
+                      "value": "asc",
+                      "description": "Sort direction: asc or desc (default 'asc')"
+                    }
+                  ]
+                },
+                "description": "Returns a paginated list of products. Supports page, size, sortBy, sortDir query parameters."
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products?page=0&size=10&sortBy=id&sortDir=asc",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "description": "Page number (default 0)",
+                          "key": "page",
+                          "value": "0"
+                        },
+                        {
+                          "description": "Number of items per page (default 10)",
+                          "key": "size",
+                          "value": "10"
+                        },
+                        {
+                          "description": "Field to sort by (default 'id')",
+                          "key": "sortBy",
+                          "value": "id"
+                        },
+                        {
+                          "description": "Sort direction: asc or desc (default 'asc')",
+                          "key": "sortDir",
+                          "value": "asc"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"totalElements\": 9633,\n  \"totalPages\": 3522,\n  \"pageable\": {\n    \"paged\": false,\n    \"pageNumber\": 4039,\n    \"pageSize\": 4541,\n    \"offset\": 7099,\n    \"sort\": {\n      \"sorted\": true,\n      \"empty\": true,\n      \"unsorted\": false\n    },\n    \"unpaged\": true\n  },\n  \"size\": 4709,\n  \"content\": [\n    {\n      \"id\": 1843,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 125.09859417084269,\n      \"discountPrice\": 270.298749916158,\n      \"quantity\": 1051,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 2238\n    },\n    {\n      \"id\": 8413,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": 4305.273428806193,\n      \"discountPrice\": 2161.3184351396053,\n      \"quantity\": 7395,\n      \"brand\": \"string\",\n      \"imageUrl\": \"string\",\n      \"skuCode\": \"string\",\n      \"categoryId\": 3098\n    }\n  ],\n  \"number\": 1532,\n  \"sort\": {\n    \"sorted\": true,\n    \"empty\": true,\n    \"unsorted\": false\n  },\n  \"numberOfElements\": 5445,\n  \"first\": false,\n  \"last\": true,\n  \"empty\": true\n}"
+                }
+              ]
+            },
+            {
+              "name": "Create a new product",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n   \"name\": \"Samsung Galaxy S23\",\n    \"description\": \"Flagship Android smartphone with AMOLED display\",\n    \"price\": 699.99,\n    \"discountPrice\": 649.99,\n    \"quantity\": 40,\n    \"brand\": \"Samsung\",\n    \"imageUrl\": \"https://example.com/images/galaxy-s23.jpg\",\n    \"skuCode\": \"SGS23-256GB-WHT\",\n    \"categoryId\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products"
+                  ]
+                },
+                "description": "Creates a new product with provided details"
+              },
+              "response": [
+                {
+                  "name": "Product created successfully",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"categoryId\": 1,\n  \"description\": \"Latest iPhone model with 128GB storage\",\n  \"name\": \"iPhone 14\",\n  \"price\": 799.99,\n  \"quantity\": 50,\n  \"skuCode\": \"IP14-128GB-BLK\",\n  \"discountPrice\": 749.99,\n  \"brand\": \"Apple\",\n  \"imageUrl\": \"https://example.com/images/iphone14.jpg\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 3871,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 514.2173418044682,\n  \"discountPrice\": 6293.937714748517,\n  \"quantity\": 5779,\n  \"brand\": \"string\",\n  \"imageUrl\": \"string\",\n  \"skuCode\": \"string\",\n  \"categoryId\": 6624\n}"
+                },
+                {
+                  "name": "Invalid input",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"categoryId\": 1,\n  \"description\": \"Latest iPhone model with 128GB storage\",\n  \"name\": \"iPhone 14\",\n  \"price\": 799.99,\n  \"quantity\": 50,\n  \"skuCode\": \"IP14-128GB-BLK\",\n  \"discountPrice\": 749.99,\n  \"brand\": \"Apple\",\n  \"imageUrl\": \"https://example.com/images/iphone14.jpg\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 3871,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 514.2173418044682,\n  \"discountPrice\": 6293.937714748517,\n  \"quantity\": 5779,\n  \"brand\": \"string\",\n  \"imageUrl\": \"string\",\n  \"skuCode\": \"string\",\n  \"categoryId\": 6624\n}"
+                },
+                {
+                  "name": "Unauthorized",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"categoryId\": 1,\n  \"description\": \"Latest iPhone model with 128GB storage\",\n  \"name\": \"iPhone 14\",\n  \"price\": 799.99,\n  \"quantity\": 50,\n  \"skuCode\": \"IP14-128GB-BLK\",\n  \"discountPrice\": 749.99,\n  \"brand\": \"Apple\",\n  \"imageUrl\": \"https://example.com/images/iphone14.jpg\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/products",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products"
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 3871,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 514.2173418044682,\n  \"discountPrice\": 6293.937714748517,\n  \"quantity\": 5779,\n  \"brand\": \"string\",\n  \"imageUrl\": \"string\",\n  \"skuCode\": \"string\",\n  \"categoryId\": 6624\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "categories",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "Get a category by ID",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/categories/7",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "categories",
+                        "7"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/categories/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "categories",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2937"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 7139,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parentId\": 7454\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Update a category",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"Latest Toys\",\n    \"description\": \"Kids toys and games latest collection\",\n    \"parentId\": 2\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/categories/7",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "categories",
+                        "7"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"Electronics\",\n  \"description\": \"Devices and gadgets\",\n  \"parentId\": 0\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/categories/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "categories",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2937"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 7139,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parentId\": 7454\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delete a category",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/categories/5",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "categories",
+                        "5"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/categories/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "categories",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "2937"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Get all categories",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories"
+                  ]
+                },
+                "description": "Retrieve all product categories"
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "categories"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 7838,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"parentId\": 3350\n  },\n  {\n    \"id\": 1262,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"parentId\": 471\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Create a category",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzYW1heXJhQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc2MjUxNzk3LCJleHAiOjE3NzYzMzgxOTd9.yIluHNuhBrBkyzdwd1STj3NO-HJshGwIYuGgDGa7dDgsMl7r1tlpId9KYIvmt_PA",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Toys\",\n    \"description\": \"Kids toys and games\",\n    \"parentId\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categories"
+                  ]
+                },
+                "description": "Create a new product category. JWT required."
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"Electronics\",\n  \"description\": \"Devices and gadgets\",\n  \"parentId\": 0\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "categories"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 7139,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parentId\": 7454\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}
