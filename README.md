@@ -251,8 +251,7 @@ Inventory Service → inventory-service.json
 
 Example:
 
-base_url = http://localhost:8080
-token = <your-jwt-token>
+base_url = http://localhost:8080 , token = <your-jwt-token>
 
 Each service is tested independently and follows REST standards.
 
