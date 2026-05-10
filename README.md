@@ -240,7 +240,7 @@ Update base_url if needed
 Start testing APIs
 
 📦 Available Collections
-Auth Service → auth-service.json
+
 User Service → user-service.json
 Product Service → product-service.json
 Order Service → order-service.json
@@ -251,7 +251,8 @@ Inventory Service → inventory-service.json
 
 Example:
 
-base_url = http://localhost:8080 , token = <your-jwt-token>
+base_url = http://localhost:8080, 
+token = <your-jwt-token>
 
 Each service is tested independently and follows REST standards.
 
@@ -372,7 +373,7 @@ To run the complete system locally using Docker:
 
 * Centralized logging (ELK Stack)
 * Circuit breaker (Resilience4j)
-* Kubernetes deployment
+* AWS cloud deployment
 * API rate limiting
 * OAuth2 / Keycloak authentication
 
